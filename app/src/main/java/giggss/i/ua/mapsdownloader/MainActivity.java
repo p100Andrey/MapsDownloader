@@ -15,10 +15,10 @@ import java.util.ArrayList;
 public class MainActivity extends Activity {
     Continent[] continents = new Continent[]{
             new Continent(R.mipmap.earth, "Africa"),
-            new Continent(R.mipmap.earth,"Asia"),
+            new Continent(R.mipmap.earth, "Asia"),
             new Continent(R.mipmap.earth, "Australia and Oceania"),
             new Continent(R.mipmap.earth, "Central America"),
-            new Continent(R.mipmap.earth, "Europe"),
+            new Continent(R.mipmap.earth, "EuropeContinent"),
             new Continent(R.mipmap.earth, "North America"),
             new Continent(R.mipmap.earth, "South America")};
 
@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         TextView tv13 = findViewById(R.id.textView13);
-        double freeBytes = Runtime.getRuntime().freeMemory() / 1000000; // Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory()
+        double freeBytes = Runtime.getRuntime().freeMemory() / 1000000;
         tv13.setText("Free " + freeBytes + " GB");
 
         double totalBytes = Runtime.getRuntime().totalMemory() / 1000000;
@@ -40,9 +40,9 @@ public class MainActivity extends Activity {
         ContinentAdapter adapter = new ContinentAdapter(this,
                 R.layout.listview_item_row, continents);
 
-        View header = (View)getLayoutInflater().inflate(R.layout.listview_header_row, null);
+        View header = (View) getLayoutInflater().inflate(R.layout.listview_header_row, null);
         lv11.addHeaderView(header);
 
-                lv11.setAdapter(adapter);
+        lv11.setAdapter(adapter);
     }
 }
