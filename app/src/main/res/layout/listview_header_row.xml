@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txtHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="false"
+        android:background="#e1e0df"
+        android:gravity="bottom"
+        android:paddingTop="10dp"
+        android:padding="15dp"
+        android:text="World Regions"
+        android:textColor="#8e8c8c"
+        android:textSize="12dp" />
+
+</LinearLayout>
