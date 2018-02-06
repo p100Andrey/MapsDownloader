@@ -14,9 +14,9 @@ public class EuropeAdapter extends ArrayAdapter<Europe> {
 
     Context context;
     int layoutResourceId;
-    EuropeContinent data[] = null;
+    Europe data[] = null;
 
-    public EuropeAdapter(@NonNull Context context, int layoutResourceId, EuropeContinent[] data) {
+    public EuropeAdapter(@NonNull Context context, int layoutResourceId, Europe[] data) {
         super(context, layoutResourceId, data);
         this.context = context;
         this.layoutResourceId = layoutResourceId;
@@ -34,8 +34,9 @@ public class EuropeAdapter extends ArrayAdapter<Europe> {
             row = inflater.inflate(layoutResourceId, parent, false);
 
             holder = new EuropeAdapter.EuropeHolder();
-            holder.imgIcon = (ImageView)row.findViewById(R.id.imgIcon);
-            holder.txtTitle = (TextView)row.findViewById(R.id.txtTitle);
+            holder.img1 = row.findViewById(R.id.imgIcon1);
+            holder.txtTitle = row.findViewById(R.id.txtTitle);
+            holder.img2 = row.findViewById(R.id.imgIcon2);
 
             row.setTag(holder);
         }
@@ -44,16 +45,18 @@ public class EuropeAdapter extends ArrayAdapter<Europe> {
             holder = (EuropeAdapter.EuropeHolder) row.getTag();
         }
 
-        EuropeContinent europeContinent = data[position];
+        Europe europeContinent = data[position];
         holder.txtTitle.setText(europeContinent.name);
-        holder.imgIcon.setImageResource(europeContinent.image);
+        holder.img1.setImageResource(europeContinent.image1);
+        holder.img2.setImageResource(europeContinent.image2);
 
         return row;
     }
 
     static class EuropeHolder
     {
-        ImageView imgIcon;
+        ImageView img1;
         TextView txtTitle;
+        ImageView img2;
     }
 }

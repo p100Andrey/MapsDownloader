@@ -9,18 +9,18 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class EuropeContinent extends Activity {
-    EuropeContinent[] europeContinents = new EuropeContinent[]{
-            new Europe(R.mipmap.earth, "Albania"),
-            new Europe(R.mipmap.earth, "Andorra"),
-            new Europe(R.mipmap.earth, "Austria"),
-            new Europe(R.mipmap.earth, "Azores"),
-            new Europe(R.mipmap.earth, "Belarus"),
-            new Europe(R.mipmap.earth, "Belgium"),
-            new Europe(R.mipmap.earth, "Bosnia and Herzegovina")
-            new Europe(R.mipmap.earth, "Bulgaria")
-            new Europe(R.mipmap.earth, "Croatia")
-            new Europe(R.mipmap.earth, "Cyprus")};
+public class EuropeContinent extends AppCompatActivity {
+    Europe[] europeContinents = new Europe[]{
+            new Europe(R.mipmap.flag, "Albania", R.mipmap.download),
+            new Europe(R.mipmap.flag, "Andorra", R.mipmap.download),
+            new Europe(R.mipmap.flag, "Austria", R.mipmap.download),
+            new Europe(R.mipmap.flag, "Azores", R.mipmap.download),
+            new Europe(R.mipmap.flag, "Belarus", R.mipmap.download),
+            new Europe(R.mipmap.flag, "Belgium", R.mipmap.download),
+            new Europe(R.mipmap.flag, "Bosnia and Herzegovina", R.mipmap.download),
+            new Europe(R.mipmap.flag, "Bulgaria", R.mipmap.download),
+            new Europe(R.mipmap.flag, "Croatia", R.mipmap.download),
+            new Europe(R.mipmap.flag, "Cyprus", R.mipmap.download)};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +36,5 @@ public class EuropeContinent extends Activity {
 //        lv12.addHeaderView(header);
 
         lv21.setAdapter(adapterEurope);
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        TextView textView = (TextView) view;
-        String strText = textView.getText().toString(); // получаем текст нажатого элемента
-
-        if(strText.equalsIgnoreCase(getResources().getString(R.string.name1))) {
-            // Запускаем активность, связанную с определенным
-            startActivity(new Intent(this, EuropeContinent.class));
-        }
     }
 }

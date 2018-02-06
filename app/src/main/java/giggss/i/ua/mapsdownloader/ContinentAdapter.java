@@ -34,7 +34,7 @@ public class ContinentAdapter extends ArrayAdapter<Continent>{
             row = inflater.inflate(layoutResourceId, parent, false);
 
             holder = new ContinentHolder();
-            holder.imgIcon = (ImageView)row.findViewById(R.id.imgIcon);
+            holder.imgIcon = (ImageView)row.findViewById(R.id.imgIcon1);
             holder.txtTitle = (TextView)row.findViewById(R.id.txtTitle);
 
             row.setTag(holder);

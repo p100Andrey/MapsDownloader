@@ -2,9 +2,11 @@ package giggss.i.ua.mapsdownloader;
 
 import android.app.Activity;
 import android.app.ListActivity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -12,7 +14,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
     Continent[] continents = new Continent[]{
             new Continent(R.mipmap.earth, "Africa"),
             new Continent(R.mipmap.earth, "Asia"),
@@ -44,5 +46,43 @@ public class MainActivity extends Activity {
         lv11.addHeaderView(header);
 
         lv11.setAdapter(adapter);
+
+        lv11.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent;
+                switch (position){
+                    case 1:
+                        intent = new Intent(MainActivity.this, EuropeContinent.class);
+                        startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(MainActivity.this, EuropeContinent.class);
+                        startActivity(intent);
+                        break;
+                    case 3:
+                        intent = new Intent(MainActivity.this, EuropeContinent.class);
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        intent = new Intent(MainActivity.this, EuropeContinent.class);
+                        startActivity(intent);
+                        break;
+                    case 5:
+                        intent = new Intent(MainActivity.this, EuropeContinent.class);
+                        startActivity(intent);
+                        break;
+                    case 6:
+                        intent = new Intent(MainActivity.this, EuropeContinent.class);
+                        startActivity(intent);
+                        break;
+                    case 7:
+                        intent = new Intent(MainActivity.this, EuropeContinent.class);
+                        startActivity(intent);
+                        break;
+                }
+
+            }
+        });
     }
 }
